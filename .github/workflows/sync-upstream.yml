@@ -1,0 +1,34 @@
+name: Sync upstream
+
+# 自动把原仓库 xylolit-mu/OnmyojiAutoScript 的更新合并进你的 midshie fork
+# 每天北京时间凌晨 2 点(UTC 18:00)跑一次,也可在 Actions 页面手动 Run workflow
+on:
+  schedule:
+    - cron: '0 18 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Sync from xylolit-mu
+        run: |
+          git remote add upstream https://github.com/xylolit-mu/OnmyojiAutoScript.git
+          git fetch upstream
+          # toolkit/ 被 .gitignore 忽略,防封文件不进 git,不会冲突
+          git merge upstream/master --no-edit
+          git push origin master
