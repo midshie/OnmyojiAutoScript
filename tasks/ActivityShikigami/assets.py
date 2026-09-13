@@ -89,7 +89,7 @@ class ActivityShikigamiAssets:
 	# 开启宝箱 
 	I_EVENT_REWARD_OPEN = RuleImage(roi_front=(1050,558,96,44), roi_back=(1045,552,106,54), threshold=0.8, method="Template matching", file="./tasks/ActivityShikigami/as/exploration/exploration_event_reward_open.png")
 	#  
-	I_EVENT_CLOSE = RuleImage(roi_front=(1095,117,42,38), roi_back=(1084,84,74,80), threshold=0.8, method="Template matching", file="./tasks/ActivityShikigami/as/exploration/exploration_event_close.png")
+	I_EVENT_CLOSE = RuleImage(roi_front=(1095,117,42,38), roi_back=(1079,94,76,87), threshold=0.8, method="Template matching", file="./tasks/ActivityShikigami/as/exploration/exploration_event_close.png")
 	# 式神助战 
 	I_SHIKIGAMI_HELP = RuleImage(roi_front=(142,282,42,42), roi_back=(127,266,74,80), threshold=0.8, method="Template matching", file="./tasks/ActivityShikigami/as/exploration/exploration_shikigami_help.png")
 	# 宝箱奖励 
@@ -110,6 +110,10 @@ class ActivityShikigamiAssets:
 	I_EVENT_STORY = RuleImage(roi_front=(1156,32,58,34), roi_back=(1132,14,115,66), threshold=0.8, method="Template matching", file="./tasks/ActivityShikigami/as/exploration/exploration_event_story.png")
 	# 确认跳过剧情 
 	I_STORY_SKIP_ENSURE = RuleImage(roi_front=(716,445,117,34), roi_back=(674,426,203,68), threshold=0.8, method="Template matching", file="./tasks/ActivityShikigami/as/exploration/exploration_story_skip_ensure.png")
+	# 探索Boss战斗事件标志
+	I_EVENT_FIGHT_BOSS = RuleImage(roi_front=(477,70,222,51), roi_back=(472,65,232,61), threshold=0.8, method="Template matching", file="./tasks/ActivityShikigami/as/exploration/exploration_event_fight_boss.png")
+	# 探索奖励关闭按钮
+	I_EVENT_REWARD_CLOSE = RuleImage(roi_front=(1203,140,42,38), roi_back=(1184,116,76,87), threshold=0.8, method="Template matching", file="./tasks/ActivityShikigami/as/exploration/exploration_event_reward_close.png")
 
 
 	# Ocr Rule Assets
@@ -289,5 +293,3 @@ class ActivityShikigamiAssets:
 	I_CHECK_RM_MAIN = RuleImage(roi_front=(148,13,174,47), roi_back=(121,0,227,72), threshold=0.8, method="Template matching", file="./tasks/ActivityShikigami/as/richman/rm_check_rm_main.png")
 	#  
 	I_CHECK_RM_RICHMAN = RuleImage(roi_front=(148,13,140,47), roi_back=(121,0,227,72), threshold=0.8, method="Template matching", file="./tasks/ActivityShikigami/as/richman/rm_check_rm_richman.png")
-
-
